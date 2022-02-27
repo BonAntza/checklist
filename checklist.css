@@ -1,0 +1,249 @@
+body {
+	background-color: #fff;
+    color: #3a3a3a;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+    margin: 0;
+}
+
+h1 {
+	display: inline-block;
+	color: #434343;
+}
+
+#header {
+	height: 5em;
+	background-color: black;
+}
+
+#content,
+.new-task-overlay {
+	margin: 2em;
+	background: #d3e2e8;
+	width: 40%;
+	padding: 2em;
+	box-sizing: border-box;
+	height: 100%;
+	overflow: hidden;
+}
+
+#header-wrapper {
+	display: flex;
+    align-items: center;
+}
+
+.new-task-overlay {
+	position: absolute;
+	opacity: 0;
+	background-color: rgb(0 0 0 / 30%);
+}
+
+.no-click {
+	pointer-events: none;
+}
+
+#content-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+#checklist {
+	margin: 3em 0;
+}
+
+#add-task {
+	background-color: #5762D5;
+    display: inline-block;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: background-color 100ms linear;
+    font-size: 2em;
+    height: 1.5em;
+    width: 1.5em;
+    text-align: center;
+	color: white;
+	margin-left: auto;
+	line-height: 1.5em;
+}
+
+#add-task:hover {
+	background-color: rgb(87 98 213 / 65%);
+	transition: background-color 150ms linear;
+}
+
+.deleter:hover {
+	background-color: #FFC2B4;
+    transition: background-color 150ms linear;
+    color: #89311c;
+}
+
+.new-task {
+	background-color: white;
+    padding: 2em;
+    margin: 4em 2em;
+    border-radius: 0.6em;
+}
+
+.task.locked {
+	pointer-events: none;
+}
+
+.task.completed .added-task {
+	opacity: 0.5;
+}
+
+input {
+	background-color: transparent;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	padding: 1em;
+    box-sizing: border-box;
+	outline: none;
+	font-size: 1em;
+	color: #282828;
+	border-radius: 0.3em;
+}
+
+.new-task-description {
+	border: 1px solid #ccc;
+}
+
+#add-new-task button {
+	margin-top: 1em;
+    background-color: #BCE784;
+	transition: background-color 100ms linear;
+    font-family: 'Open Sans';
+    padding: 0.7em 2em;
+    border: none;
+    border-radius: 0.4em;
+    color: #253c08;
+	cursor: pointer;
+}
+
+#add-new-task button:hover {
+	background-color: #bce784a6;
+	transition: background-color 150ms linear;
+}
+
+.added-task:hover {
+	background-color: #f0f0f0;
+}
+
+.task-text {
+	flex: 1;
+}
+
+#status-message-wrapper {
+	display: flex;
+	width: 100%;
+	position: relative;
+	justify-content: center;
+}
+
+#status-message-wrapper.hidden {
+	display: none;
+}
+
+#status-message {
+	position: absolute;
+    background-color: white;
+    padding: 1.8em;
+    border-radius: 1em;
+    box-shadow: 0 0 2em hsl(0deg 0% 0% / 10%);
+    font-size: 1.2em;
+}
+
+.task {
+	display: flex;
+    margin: 1em 0;
+    position: relative;
+    height: 3em;
+    align-items: center;
+    background-color: rgb(255 255 255);
+    padding: 1em;
+    border-radius: 0.6em;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+}
+
+.deleter {
+    cursor: pointer;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.3em;
+    padding: 0em;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.2em;
+	margin-left: 0.5em;
+	color: #717171;
+}
+
+.checkbox {
+	display: flex;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-right: 0.5em;
+}
+
+.checkbox input {
+	display: none;
+}
+
+.checkmark {
+	height: 1.2em;
+	width: 1.2em;
+	background-color: #ededed;
+	border-radius: 50%;
+}
+
+.checkbox:hover input ~ .checkmark {
+	background-color: #ddd;
+}
+
+.checkbox input:checked ~ .checkmark {
+	background-color: #5DD39E;
+}
+
+.checkbox input:checked ~ .checkmark:hover {
+	background-color: #5dd39eb3;
+}
+
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.checkbox .checkmark:after {
+	top: 1.2em;
+    left: 1.1em;
+    width: 0.25em;
+    height: 0.5em;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#checklist-date {
+	font-style: italic;
+}
